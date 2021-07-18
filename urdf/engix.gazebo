@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+<robot name="engix" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <!--robotNamespace>engix</robotNamespace-->
+    <legacyMode>true</legacyMode>
+    <alwaysOn>true</alwaysOn>
+    <publishWheelTF>true</publishWheelTF>
+    <publishTf>true</publishTf>
+    <publishWheelJointState>true</publishWheelJointState>
+    <updateRate>50.0</updateRate>
+    <leftJoint>left_wheel</leftJoint>
+    <rightJoint>right_wheel</rightJoint>
+    <wheelSeparation>0.365</wheelSeparation>
+    <wheelDiameter>0.156</wheelDiameter>
+    <wheelAcceleration>1.0</wheelAcceleration>
+    <wheelTorque>5</wheelTorque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_footprint</robotBaseFrame>
+    <odometrySource>0</odometrySource>
+  </plugin>
+</gazebo>
+<gazebo>
+    <plugin name="gazebo_imu_plugin" filename="libgazebo_ros_imu.so">
+      <!-- <robotNamespace></robotNamespace> -->
+    <topicName>imu</topicName>
+    <serviceName>imu_service</serviceName>
+    <bodyName>base_footprint</bodyName>
+    <gaussianNoise>0</gaussianNoise>
+    <rpyOffsets>0 0 0</rpyOffsets>
+    <updateRate>20.0</updateRate>
+    <alwaysOn>true</alwaysOn>
+    </plugin>
+  </gazebo>
+
+
+
+
+
+
+
+
+<!--
+<gazebo reference="base_footprint">
+  <material>Gazebo/Grey</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+-->
+<gazebo reference="base_link">
+  <material>Gazebo/Grey</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="lwheel_1">
+  <material>Gazebo/Black</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rwheel_1">
+  <material>Gazebo/Black</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="ZED2_1">
+  <material>Gazebo/Black</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="dc_dc_1">
+  <material>Gazebo/Gray</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="battery_1">
+  <material>Gazebo/Black</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="jetson_nano_1">
+  <material>Gazebo/Green</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lan_1">
+  <material>Gazebo/Gray</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="gps_1">
+  <material>Gazebo/Green</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="usb_hub_1">
+  <material>Gazebo/Black</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_tof_1">
+  <material>Gazebo/Black</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="caster_right_1">
+  <material>$Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="caster_left_1">
+  <material>Gazebo/Silver</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="caster_wheel_left_1">
+  <material>Gazebo/Blue</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="caster_wheel_right_1">
+  <material>Gazebo/Blue</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>
